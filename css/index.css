@@ -1,0 +1,255 @@
+body{
+    /* background-color:  antiquewhite; */
+    background-image: url(../img/bgimg2.jpg);
+    
+    width: 100%;
+    /* min-width: 1650px; */
+
+}
+
+.col-xs-2 ul li {
+    list-style: none;
+}
+.col-xs-2 ul li a:hover{
+    background-color:rgba(100, 100, 100, 1);
+}
+
+
+
+#vue-divs {
+    height: 100vh;  /* 百分百适应当前浏览器高度*/
+    min-height: 920px; /* 最小高度 */
+    min-width: 1650px;
+}
+
+.rightbody {
+    /* background-color: burlywood; */
+    padding-left: 10px;
+    /* background-image: url(../img/bgimg.jpg); */
+    background-size: cover;
+    height: 100%;
+    /* min-width: 1200px; */
+    width: 83%;
+    
+}
+
+.aboutTimeline{
+    border: yellowgreen 1px solid;
+    border-radius: 10px;
+    width: 800px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 210px;
+    /* font-size: 20px; */
+    /* background-color: black; */
+    padding: 5px;
+}
+.aboutTimeline span{
+    color: green;
+    font-weight: bolder;
+}
+
+.aboutTimeline:nth-child(2){
+    width: 530px;
+
+}
+.aboutTimeline:nth-child(3){
+    width: 230px;
+
+}
+.aboutTimeline:nth-child(4){
+    width: 800px;
+}
+.aboutTimeline:nth-child(5){
+    width: 410px;
+}
+.aboutTimeline:nth-child(6){
+    width: 350px;
+}
+.aboutTimeline:nth-child(7){
+    width: 705px;
+}
+.aboutTimeline:last-child{
+    height: 200px;
+}
+
+.about2-ol{
+    /* font-size: 20px; */
+    color:black;
+    position: relative;
+    top: 80px;
+    left: 100px;
+   
+}
+#cimg{
+    position: absolute;
+    left: 550px;
+    top: 80px;
+}
+.about2-ol li{
+    margin-top: 10px;
+}
+.aboutTest3 , .hisTextDiv, .zzjTestDiv,.shi-overflow-div{
+    /* font-size: 0.18rem; */
+    color:black;
+    position: relative;
+    /* top: 20px; */
+    left: 100px;
+    width: 75%;
+    height: 85%;
+    line-height: 40px;
+    overflow-y: scroll;/*设置y轴滚动条，溢出文本竖向滚动显示*/
+
+}
+/* for Chrome 用伪类选择器隐藏滚动条*/
+.aboutTest3::-webkit-scrollbar,.hisTextDiv::-webkit-scrollbar ,
+.zzjTestDiv::-webkit-scrollbar,
+.shi-overflow-div::-webkit-scrollbar{
+display: none;
+}
+.vue-div {
+    position: absolute;
+    min-width: 1100px;
+    width: 100%;
+    height: 100%;
+
+    
+    /* left: 10%; */
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.home-div{
+    position: absolute;
+    min-width: 1100px;
+    width: 75%;
+    height: 100%;
+    padding-left: 10px;
+    padding-top: 50px;
+
+    /* background-color: rgba(255, 255, 255, 0.6); */
+}
+.link-us{
+    position: absolute;
+    left: 300px;
+    top: 300px;
+    color:white;
+
+}
+
+
+.col-xs-2 {
+    position: relative;
+    /* background-color: burlywood; */
+    /* background-image: url(../img/leftbgimg.jpg); */
+    background-size: cover;
+    height: 100%;
+    /* min-width: 300px; */
+    min-width: 280px;
+    overflow:hidden;
+   
+}
+#shi-j{
+    background-size: cover;
+    height: 80%;
+    min-height: 820px;
+    width: -webkit-calc(100% + 33px);
+    width: -moz-calc(100% + 33px);
+    width: calc(100% + 33px);
+    overflow-y: scroll;/*设置y轴滚动条，溢出文本竖向滚动显示*/
+    
+}
+#shi-j::-webkit-scrollbar{
+    display: none;
+}
+.col-xs-2 a{
+    color: white;
+}
+
+/*左侧一级菜单字体大小*/
+.col-xs-2 ul li {
+    font-size: 15px;
+    
+}
+
+/*给二级列表默认添加左侧边框，借助展开缩放实现显示和隐藏*/
+#list1,#list2,#list3{
+    border-left: red solid .12rem;
+}
+/*左侧二级菜单字体大小*/
+#list1 li,#list2 li, #list3 li{
+    /* font-size: .17rem; */
+    font-size: 14px;
+}
+#list1 li:hover,#list2 li:hover,#list3 li:hover{
+    background-color:rgba(100, 100, 100, 1);
+    border-radius: 10px;
+    font-size: 15px;
+}
+.nav-bottom {
+    position: absolute;
+    width: 80%;
+    bottom: 0px
+}
+
+
+
+
+.zzjTestDiv img,
+.shi-overflow-div img{
+    left: 150px; 
+    position: relative; width:600px ;
+    transition: all .3s;
+}
+
+.zzjTestDiv img:hover,
+.shi-overflow-div img:hover{
+    width: 700px;
+    left: 100px;
+    transition: all .3s;
+}
+
+
+.subhead{
+    font-size: 12px;
+}
+
+
+/*列表选中状态--去掉原始底色，加入左侧边框*/
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+    border-left: .12rem solid red;
+    border-radius: 0%;
+}
+
+.shi-active{
+    border-left: 0.1rem solid white;
+}
+
+/* 顶级菜单左侧--底色--边框样式 */
+#shi-j>li{
+    border-left: .1rem solid rgba(62, 152, 226, 0.6);
+}
+
+.shi-left{
+    border: .1rem solid red;
+}
+
+#list1{
+    border-left: red 1px solid;
+    
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .5s;
+
+}
+
+.fade-enter,
+.fade-leave-to{
+    opacity: 0;
+}
+.fade-enter{
+    left: 100%;
+}

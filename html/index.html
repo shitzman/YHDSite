@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body style="overflow: hidden;">
+
+    <div class="container-fluid">
+
+        <div class="row" id="vue-divs">
+            <div class="col-xs-2" >
+                
+
+           
+                <H2>YHD <small style="color: white;">云惠达科技有限公司</small></H2>
+               
+                
+                <ul class="nav nav-pills nav-stacked" id="shi-j" >
+                    <li role="presentation" class="active" @click="home" style="color: red;"><a href="#">首页</a></li>
+                    <li role="presentation">
+
+                        <!-- 选项控制data-target对应的显隐 -->
+                        <a href="#" data-toggle="collapse" data-target="#list1" @click="changeListIcon1" >关于云惠达 <span
+                            class="glyphicon "
+                            v-bind:class=" listIcon1 ? 'glyphicon-triangle-right' : 'glyphicon-triangle-bottom' "></span></a>
+                        <!-- 隐藏的详细菜单 -->
+                        <ul id="list1" class="collapse" >
+
+                            <li @click="changeAboutDivIsShow1" style="line-height: 40px;">
+                                <a href="#">历久弥新</a>
+                            </li>
+
+                            <li @click="changeAboutDivIsShow2" style="line-height: 40px;"><a href="#">追逐完善</a></li>
+                            <li @click="changeAboutDivIsShow3" style="line-height: 40px;"><a href="#">共创未来</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <!-- 产品中心---侧边栏选项 -->
+                    <li role="presentation" >
+                        <!-- 选项控制data-target对应的显隐 -->
+                        <a href="#" data-toggle="collapse" data-target="#list2" @click="changeListIcon2" :class="listIcon2 ? 'active' : '' ">产品中心 <span
+                                class="glyphicon "
+                                v-bind:class=" listIcon2 ? 'glyphicon-triangle-right ' : 'glyphicon-triangle-bottom' "></span></a>
+                        <!-- 隐藏的详细菜单 -->
+                        <ul id="list2" class="collapse" >
+
+                            <li @click="changeIsShow1" style="line-height: 40px;">
+                                <a href="#">医院信息化解决方案 <span class="subhead">HIS</span> </a>
+                            </li>
+
+                            <li @click="changeIsShow2" style="line-height: 40px;"><a href="#">医院实验室解决方案 <span class="subhead">LIS</span></a></li>
+                            <li @click="changeIsShow3" style="line-height: 40px;"><a href="#">电子病历系统 <span class="subhead">EMR</span> </a></li>
+
+                            <li @click="changeIsShow4" style="line-height: 40px;"><a href="#">PACS</a></li>
+                            <li @click="changeIsShow5" style="line-height: 40px;"><a href="#">自助缴费终端</a></li>
+                            <li @click="changeIsShow6" style="line-height: 40px;"><a href="#">一卡通</a></li>
+                            <li @click="changeIsShow7" style="line-height: 40px;"><a href="#">体检系统</a></li>
+
+                            <li @click="changeIsShow8" style="line-height: 40px;"><a href="#">院内决策分析 <span class="subhead">BI</span></a></li>
+                            <li @click="changeIsShow9" style="line-height: 40px;"><a href="#">移动支付</a></li>
+
+                            <li @click="changeIsShow9" style="line-height: 40px;"><a href="#">分诊叫号</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- 客户案例--侧边栏选项 -->
+                    <li role="presentation">
+                        <!-- 选项控制data-target对应的显隐 -->
+                        <a href="#" data-toggle="collapse" data-target="#list3" @click="changeListIcon3">客户案例 <span
+                                class="glyphicon "
+                                v-bind:class=" listIcon3 ? 'glyphicon-triangle-right' : 'glyphicon-triangle-bottom' "></span></a>
+                        <!-- 隐藏的详细菜单 -->
+                        <ul id="list3" class="collapse">
+
+                            <li @click="changeCaseDivIsShow1" style="line-height: 40px;"><a href="#">公立医院</a></li>
+                            <li @click="changeCaseDivIsShow2" style="line-height: 40px;"><a href="#">民营医院</a></li>
+                            <li @click="changeCaseDivIsShow3" style="line-height: 40px;"><a href="#">典型医院</a></li>
+                        </ul>
+                    </li>
+
+                    <li @click="updateMessage"><a href="#">更新动态</a></li>
+                    <li @click="linkUs"><a href="#">加入我们</a></li>
+
+                </ul>
+
+                <div class="nav-bottom  navbar-fixed-bottom">
+                    <hr>
+                    <h5>备案号</h5>
+                </div>
+            </div>
+
+            
+            <!-- <div class="col-xs-10 rightbody" :style="{ 'background-image':imgUrl}"> -->
+            <div class="col-xs-10 rightbody">
+            
+                <div class="home-div" v-show="homeDivIsShow">
+                    <h1 style="color:white;">北京云惠达科技有限公司</h1>
+                    <hr style="width: 30%; position: absolute; left: 0px;">
+                    <div style="color: white; padding-left: 50px;padding-top: 50px;">
+                        <h2>云</h2>
+                            
+                            <h4 style="padding-left: 40px;">实现医疗信息化平台化运营</h4>
+                            <hr style="width: 20%; position: absolute; left: 50px;">
+                            <br>
+                        <h2>惠</h2>
+                            <h4 style="padding-left: 40px;">降低中小型医疗机构医疗信息化建设成本，降低病患就医成本</h4>
+                            <hr style="width: 42%; position: absolute; left: 50px;">
+                            <br>
+                        <h2>达</h2>
+                            <h4 style="padding-left: 40px;">使用高效率协同工作机制达到云、惠的目的</h4>
+                            <hr style="width: 30%; position: absolute; left: 50px;">
+
+                        <h1 style="text-align: right; margin-top: 220px; padding-right: 10%;">我们有责任，我们也负责任</h1>
+                    </div>
+                </div>
+
+                <div class="aboutYHD">
+                    <transition name="fade">
+                        <div class="div1 vue-div" v-show="aboutDivIsShow1">
+                            <h1 style="padding-left: 5%; color:white;">北京云惠达科技有限公司<hr/></h1>
+                            
+                            <div class="aboutTimeline"> <span>2009</span> 年开始进入医疗信息化行业，主要研发HIS、LIS系统 </div>
+                            <div class="aboutTimeline"> <span>2012</span> 年客户增加到10家</div>
+                            <div class="aboutTimeline"> <span>2014</span> 年新版HIS、LIS、MER一体化产品上线运行，将医疗信息化正式定义为产品化经营</div>
+                            <div class="aboutTimeline"> <span>2015</span> 年全部客户免费更新到完全统一的版本</div>
+                            <div class="aboutTimeline"> <span>2016</span> 年注册北京云惠达科技有限公司</div>
+                            <div class="aboutTimeline"> <span>2017</span> 年客户增加至40家，租赁中心服务器，同时上线统一自动升级、更新功能</div>
+                            <div class="aboutTimeline"> <span>2018</span> 年至今所有客户( 分布于：辽宁、秦皇岛、衡水、廊坊、石家庄、邢台、邯郸、新乡、南阳、运城、江西 共46家不同类型，其中包括眼科、血液病、
+                                皮肤病、中医、蒙医、传染病、糖尿病、骨科、综合等，不同运营模式的医疗机构如公立、私人、公私结合)的数据库更新400余次，医疗信息化系统更新700余次，系统至今运行稳定;
+                                同时与中国平安医疗云平台、北京天智(BI分析)建立合作关系，成功实现平台化运营模式，后续将开放开发平台，让更多的医疗软件开发人员开发出最适合医疗信息化的模块产品，
+                                给医院多重选择的自由。
+                            </div>
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="aboutDivIsShow2">
+                             <h1 style="padding-left: 5%; color:white;">追逐完善</h1> 
+                             <hr>
+                            <ol class="about2-ol">
+                                <li>集所有医疗信息化管理系统的模块于一体</li>
+                                <li>适应不同的开发工具开发的应用系统</li>
+                                <li>适应不同的数据库存储方式</li>
+                                <li>建立统一的权限管理体系</li>
+                                <li>建立统一的部署、升级、更新机制</li>
+                                <li>建立统一的问题提交、解决体系</li>
+                                <li>建立统一的客服体系</li>
+                                <li>建立统一的接口对接体系</li>
+                                <li>打造全开发工具下的开发者开发平台</li>
+                                <li>建立APP的发布、试用、购买服务体系</li>
+                            </ol>
+                            <img id = "cimg" src="../img/c5.png" alt="功能图片">
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="aboutDivIsShow3">
+                             <h1 style="padding-left: 5%; color:white;">共创未来</h1> 
+                             <hr>
+                            <div class="aboutTest3">
+                                <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目前我们所有的客户（46家）都在使用我们统一的云惠达医疗信息化管理平台，不管大小，医生、护士的工作方式、工作要求都是一致的，
+                                    这就造就了我们的软件统一化进程的第一步；在流程上，小型医疗机构可能没有大型医疗机构那么完善，那么我们使用内嵌配置的功能来实现不同的流程流转，
+                                    使其符合小型又符合大型医疗机构的需求，这个配置目前已达到600多项之多，可见不同医疗机构对待医疗信息化的改造有多么的复杂；
+                                    但即使这样我们也无法避免我们的平台出现一些不可预知的BUG，
+                                    但是我们已经在研发问题反馈及统一回复功能，使所有的客户的所有人员都有偿参与到我们的平台建设中来，使我们的平台愈发强大。</p>
+
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同时我们为实现协同办公的模式实现效率最大化方面，做出了研发协同办公模块(云办公)的计划，目前已经实现我们的销售、
+                                    服务人员通过办公系统实现软件的有效期及维护有效期的控制、维护费的自动提醒功能；后续将实现财务人员通过我们的办公系统实现发票的自动打印、
+                                    合同自助打印、收款自助查询功能，医院通过我们的办公系统自助提交软件需求、
+                                    根据模板自动生成、打印维护合同、接口合同等所有的合同，上传付款凭证等工作，维护人员通过办公系统参与问题的解答及快速回复。
+                                </p>
+                                <p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通过降低我们的运营成本，降低医疗信息化产品的研发成本，来降低医疗机构医疗信息化建设的成本，
+                                    并且通过我们的平台使医疗机构的信息化更加稳固，更加实用，我们所做的一切都只有一个目的：降低医疗成本
+                                </p>
+                                
+                            </div>
+                            
+                        </div>
+                    </transition>
+                </div>
+            
+
+                <div class="shi-cpzx">
+                    <transition name="fade">
+                        <div class="div1 vue-div" v-show="divIsShow1">
+                            
+                            <h1 style="padding-left: 5%; color:white;">医院信息化综合管理平台系统（HIS）</h1> 
+                             <hr>
+                            <div class="shi-overflow-div">
+
+                                <p>
+                                    云惠达HIS系统，历经2009年研发成功，到2014年的新版HIS、LIS、MER一体化产品上线运行
+                                    将医疗信息化正式定义为产品化运营，再到2015年全部客户免费更新到完全统一的版本，不断砥砺前行，
+                                    在做到了数据本地化安全的同时，又做到了功能的及时更新与补充。2017年在40多家医院同时上线自动升级、
+                                    自动更新功能。至此，对于不同医院的统一与不统一的功能要求与维护都能够做到精准定位、及时反馈、及时处理、及时解决、
+                                    及时更新、及时应用；
+                                </p>
+
+                                <img src="../img/emr.png" alt="EMR配图">
+                                <h3>&bull; 各模块详情信息</h3>
+                                <ol>
+                                    <li>系统维护：</li>
+                                    <p>
+                                        系统字典、医保农合配置、系统配置
+                                    </p>
+                                    <li>导诊平台</li>
+                                    <p>病人登记办卡管理</p>
+                                    <li>卡管理:</li>
+                                    <p>一卡通系统</p>
+                                    <li>门诊挂号</li>
+                                    <p>门诊挂号管理</p>
+                                    <li>门诊医生工作站</li>
+                                    <p>门诊医生写病历、开处方、申请检查、申请检验管理</p>
+                                    <li>门诊护士工作站</li>
+                                    <p>门诊输液及服药指导</p>
+                                    <li>门诊收费</li>
+                                    <p>门诊收费管理（可做医保、农合接口二次开发）</p>
+                                    <li>住院管理</li>
+                                    <p>住院登记、住院收费结算管理（可做医保、农合接口二次开发）</p>
+                                    <li>住院医生工作站</li>
+                                    <p>住院医生书写医嘱、打印医嘱、申请检查、申请检验、书写病历及查看费用</p>
+                                    <li>护士工作站</li>
+                                    <p>护士校对医嘱、执行医嘱、停嘱医嘱、打印医嘱、临时计费、病人分床等</p>
+                                    <li>药库管理</li>
+                                    <p>药库管理系统，出入库管理及库存盘点、查询、库存预警等；可配置多个药库</p>
+                                    <li>药房管理</li>
+                                    <p>药房管理系统，可设定多个药房如门诊药房、住院药房、中药房，
+                                        药房发药、退药、出入库、药房调拨、药房库存查询、盘点、灵活先进的库存预警，药房出药汇总及一系列汇总报表</p>
+                                    <li>物资管理</li>
+                                    <p>管理医院低于500元以下的物资信息</p>
+                                    <li>固定资产</li>
+                                    <p>管理医院大于500元以上的资产</p>
+                                    <li>财务管理</li>
+                                    <p>财务需要的统计报表</p>
+                                    <li>院长查询</li>
+                                    <p>院长需要的统计报表</p>
+                                    <li>手术管理</li>
+                                    <p>手术记录管理、手术查询、统计</p>
+                                    <li>医技管理</li>
+                                    <p>各个医技科室进行医技操作的执行确认</p>
+                                    <li>OA平台</li>
+                                    <p>医院内部沟通、通知、申请管理系统</p>
+                                    <li>农合接口</li>
+                                    <p>与农村合作医疗的数据传输接口</p>
+                                    <li>医保接口</li>
+                                    <p>与医保中心的数据接口</p>
+                                    <li>EMR电子病历</li>
+                                    <p>标准版电子病历系统</p>
+                                    <li>LIS系统</li>
+                                    <p>检验科管理系统</p>
+                                    <li>PACS系统</li>
+                                    <p>医学影像管理系统</p>
+                                    <li>居民健康管理</li>
+                                    <p>居民健康卡及居民健康档案</p>
+                                </ol>
+
+                                
+
+                            </div>
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow2">
+                            <h1 style="padding-left: 5%; color:white;">临床系统（LIS）</h1> 
+                             <hr>
+                             <div class="shi-overflow-div">
+                                 <p>LIS系统(Laboratory Information System) 即实验室（检验科）信息系统，它是医院信息管理的重要组成部分之一，
+                                    自从人类社会进入信息时代，信息技术的迅速发展加快了各行各业现代化与信息化的进程。LIS系统逐步采用了智能辅助功能来处理大信息量的检验工作
+                                    ，即LIS系统不仅是自动接收检验数据，打印检验报告，系统保存检验信息的工具，
+                                    而且可根据实验室的需要实现智能辅助功能。随着IT技术的不断发展，人工智能在LIS系统中的应用也越来越广泛</p>
+                                 
+                                <ol >
+                                    <img src="../img/lis.png" alt="LIS配图">
+                                     <li>无纸化检验:</li>
+                                     <p>  也可称之为数字化检验。在软件系统的支撑下，患者一旦挂号或者住院，他就获得了一个唯一的标识（门诊号或住院号，软件自动生成）。
+                                         门诊医生或住院医生所开出的任何化验信息都与患者的标识相关联，化验信息一旦生成，检验科立即就能得到。检验结果出来后数据立即存入软件系统，
+                                         门诊医生或住院医生也马上就能看到。
+                                    </p>
+                                    <li>
+                                        检验信息的准确性
+                                        <ul style="list-style-type:disc">
+                                            <li>HIS—LIS检验联网</li>
+                                            <p>　  检验信息的不准确性首先表现在由于医生字迹的潦草或者笔误导致患者信息不准确，如姓名看不懂，
+                                                或者患者门诊号或住院号出错。采用HIS—LIS联网后，这些信息都是有机器来产生和传递，避免了人工操作，
+                                                人为失误自然得到避免。
+                                            </p>
+                                            <li>结果准确</li>
+                                            <p>
+                                                由于各仪器的检验结果自动从仪器传输到计算机，然后再自动存放到服务器上，打印出来的报告单和患者一一对应，不会出错。
+                                                另外患者的历史结果甚至几年前的结果，也可迅速查询得到。
+
+                                            </p>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li>成本核算 
+                                        <p>检验科实施LIS后，运行成本的节约表现在两个方面：</p>
+                                        <ul style="list-style-type:disc">
+                                            <li>试剂、仪器使用率提高 因为对仪器、试剂的使用情况掌握的准确及时，可以避免试剂的库存积压，避免浪费。另外仪器因为整体运行效率的提升，
+                                                使用率提高了，减少了仪器的闲置，也是一种成本的节约。
+                                            　</li>
+                                            <li>
+                                                纸张等耗材的节约 整个检验科实施LIS后，检验报告可以联网集中批量打印，我们的系统可以把几张报告单打印在同一张A4纸上。
+                                                同时还支持“套打“——即在事先印制好的报告单上，系统只需往该单据上打印检验结果即可，类似于现在的发票“套打”。如果成批印制报告单，
+                                                其成本可以比单纯够买打印纸要小。同时因为系统打印的内容少了，
+                                                打印机的消耗也小了，更进一步节约了成本。我们初步估计了一下，单是此项功能，每年可以节约接近10万圆运行成本。
+                                            </li>
+                                            <li>
+                                                无纸化检验 事实上，实施LIS后，所有的检验信息全部都在网上快速传递着，完全可以抛弃纸张。这样所有的打印消耗全都避免了，
+                                                还可以大幅度提高工作效率。
+                                            </li>
+                                        </ul>
+
+                                    </li>
+                                    
+                                    <li>运行便利</li>
+                                    <p>实施LIS后，整个检验科乃至整个医院的检验信息就全在网络系统（LIS）的管理之下，这能带来快捷高效的运行便利。
+                                        　  这个便利主要表现在检验科在申请单录入时。目前国家要求必须给患者出具中文检验报告，为满足该项要求，绝大多数仪器都配备了中文软件。
+                                        这样，在给患者出报告前不可避免的先要把患者信息输入计算机。对于大型医院医院的海量报告单数量来讲，这个输入的工作量是非常巨大的。
+                                        而实施LIS后这部分工作完全自动化了。患者信息的输入被均匀分配到门诊挂号、门诊医生、病房医生或护士、门诊取血点等等。</p>
+                                    
+                                    <li>
+                                        计算机联网处理结果
+                                    </li>
+                                    <p>
+                                        检验结果在给患者打印报告前，检验医生必须首先对结果进行审核。检验科联网后，任何一台计算机都可以处理任何一台仪器的数据。
+                                        这样避免了计算机的闲置。而现在的情况是，计算机没联网，某台计算机仅仅针对一台仪器，工作完成后只能闲着。
+
+                                    </p>
+
+                                    <li>
+                                        打印联网
+                                    </li>
+                                    <p>
+                                        由于检验数据都是在网上的，连上网的任何计算机都可以进行打印。这样就可以很方便的分配打印任务，如设立打印工作站，
+                                        专职进行打印；也可以把打印均匀分配到护士工作站上进行打印。
+                                    </p>
+
+                                    <li>
+                                        结果共享
+                                    </li>
+                                    <p>
+                                        医生或患者可以随时查看检验结果，尤其是历史结果，还可以进行结果的对比。其中历史结果对比是LIS给医院带来的直接好处。通过项目结果数据的对照，
+                                        医生更容易判断患者病情的变化，更容易作出诊断结论。
+                                    </p>
+
+                                    <li>
+                                        漏费控制
+                                    </li>
+                                    <p>
+                                        系统必需得到患者姓名和检验项目才能生成检验报告。LIS是和医院收费软件（HIS）联结在一起的，无论是门诊患者还是住院病人，当医生为其开具检验申请或医嘱后，
+                                        收费软件处理其费用信息，包括：病人基本信息—姓名、性别、年龄；检验项目；送检科室以及送检医生。这些信息被ZDGHLIS读取,处理后形成系统特定检验信息。这时，
+                                        检验科在收到患者标本后即可开始试验，试验结束后ZDGHLIS即可为每位患者出据中文综合检验报告。因此，理论上，若患者未交费，系统得不到患者姓名和检验项目，ZDGH LIS无法生成检验报告，导致最终患者不可能得到检验报告。
+　                                      急诊、特批、体检类检验在医生得到了相应的急诊号、特批号、体检号后也可以为患者进行检验并出具报告。急诊号、特批号、体检号可以由检验医生自己申请也可由医院统一放号。
+                                        采用何种方式由医院自行选择。急诊号、特批号、体检号的使用合法与否，最后由系统审核端统一审核。
+
+                                    </p>
+
+                                    <li>
+                                        检验流程控制
+                                        <ol>
+                                            <li>患者就诊流程
+                                                <ul>
+                                                    <li>门诊患者：门诊患者凭医生开具的检验申请单到缴费处缴费，然后检验科即可得到该患者信息，因此可以为其做检验，出具报告。</li>
+                                                    <li>住院患者：住院患者在医生下检验医嘱后护士为其下帐，检验科即可得到该患者信息，因此可以为其做检验，出具报告。</li>
+                                                    <li>急诊患者：急诊患者因病情急必须立即进行化验，来不及缴费。因此走正常流程检验科得不到患者信息也就无法开展试验。为治病救人，系统允许用特殊方式下的急诊模式先行试验。
+                                                    　</li>
+                                                    <li>特批患者：医院领导因各种原因批准的特殊检验，不须缴费。因此走正常流程检验科得不到患者信息也就无法开展试验。针对这种情况，系统允许用特殊方式下的特批模式先行试验。
+                                                    　</li>
+                                                    <li>体检类检验：医院对外承接的体检类检验，通常都是人数众多批量的，同时费用也是集体统一付帐。因此不存在单个人员缴费的可能。检验科同样得不到患者信息。系统特别设立特殊方式体检模式试验。
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                医生操作流程
+                                                <p>系统为每位检验科医生建立账号，医生用自己的账号登陆。系统依据不同的账号对医生的工作做相应记录，同时自动在检验报告上附上该医生姓名作为报告单上的检验者信息。当LIS服务器从HIS读取了患者的收费信息后，该医生即得到了患者信息，可以为其出具检验报告。急诊、特批、体检类别采用特殊情况情况来处理。
+                                                　</p>
+                                                <ul>
+                                                    <li>门诊、住院病人：门诊、住院病人是医院接收的绝大多数检验工作量之所在，也是目前检验费用流失的最大洞口之所在。为堵住该漏洞，本系统和HIS做无缝联结，确保HIS没有收费信息过来，就不给患者出具检验报告。同时，患者缴费的多少是和其检验项目严格相关的，本系统将严格按照HIS传过来的检验项目进行检验，做到检验报告单上不多出也不少出检验结果，有效地避免了小收费大检验的问题。具体的控制流程分为生化类和其它两大类。
+                                                        生化类检验,
+                                                        　  生化类是医院检验最为复杂也是变化最多的一类。由于不同医院HIS的多样性、HIS功能的完善程度以及医生开具化验单的不确定性，表现在系统从HIS得到的收费信息里，检验项目的不确定性非常多和复杂。表现为：
+                                                        　</li>
+                                                    <li>HIS对所有的检验项目都不加区分，全部标记为检验费。这样，系统只能把每条收费记录对应成生化全项。只能做到不交费不出报告，而交了费则可以出全部生化检验项目的报告。不能解决小收费大检查的问题。
+                                                    　</li>
+                                                    <li>HIS能区分出不同的检验项目，系统可以做到检验报告和患者缴费金额严格一致。对可能出现的患者一次交费出现多条收费记录的情况，系统可以自动合并这些记录，使其成为一条信息，进而把结果打印在同一张报告单上。
+                                                    　</li>
+                                                    <li> 其它类检验
+                                                        　  这些包括血常规、尿常规、尿沉渣、血凝、血气、乙肝等检验项目固定的检验类别。由于检验项目数量的固定，系统设定好后，无论HIS性能如何，只要能产生收费记录，本系统均能正确无误的出具检验报告。
+                                                        后续操作流程
+                                                        　  上述操作全是检验信息进入系统的过程，系统的费用控制流程就此完成。接下来操作是处理检验结果、打印检验报告、查询历史结果、仪器质控管理。
+                                                        　</li>
+                                                    <li>处理检验结果 对于合同里列出的仪器，本系统将自动接收其检验结果。对于需要计算产生的结果，本系统可以自动计算出其结果。对于数值类检验结果，本系统可以自动判定结果的偏高、偏低状态。检验结果的人工修改可以限制（有权限才能修改结果）也可不加限制，具体由医院决定。
+                                                    　</li>
+                                                    <li>仪器联结说明 本系统不控制仪器的运行、单向接收仪器结果。对于进口仪器，由于其制造符合医疗仪器制造规范，绝大多数都能联结。而对于绝大多数国产仪器，尤其是小厂家的小型仪器，不能保证一定能联结。有些仪器的检验结果包含图形，对于通用图形，本系统予以支持。其它由设备厂家定义的图形，受厂家技术资料封锁的限制，可能无法实现。
+                                                    　</li>
+                                                    <li>打印检验报告 报告可以逐个打印也可批量打印。系统提供三种打印格式供用户选择使用。打印支持所有Windows下的打印机。
+                                                    　</li>
+                                                    <li>查询历史结果 可以根据患者姓名、检验项目、时间、检验医生、病历号、标本号查询历史结果。同一患者的结果可以进行对比。
+                                                    　</li>
+                                                    <li>仪器质控管理 自动接收仪器质控结果并生成质控图，并可打印出来.</li>
+
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    
+                                </ol>
+                             </div>
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow3">
+                            
+                            <h1 style="padding-left: 5%; color:white;">电子病历系统（MER）</h1> 
+                             <hr>
+                             <div class="shi-overflow-div">
+                                <p>云惠达EMR电子病历系统的主要特点有：</p>
+                                <ol>
+                                    <li>病历内容框架采取标准化、结构化。书写时只能选择系统提供的项目，不能自定义。</li>
+                                    <li>屏蔽外部文件复制，本病人的资料和“临床知识库”，关键词库的内容可以复制。</li>
+                                    <li>记录保存后仍可任意修改，签名之后本人不能修改，本组的上级医生可以修改。</li>
+                                    <li>上级医生修改的记录均带有标记，修改痕迹保存在服务器上。</li>
+                                    <li>住院病历和病程记录的签名均自动生成，用谁的用户名和密码进入就签谁的名，录入的姓名无效。</li>
+                                    <li>住院病历和病程记录的书写时间在签名的同时自动生成，录入的书写时间无效。</li>
+                                    <li>书写文书所需的病人姓名、性别、年龄、科室、床号、住院号均自动生成。</li>
+                                    <li>病历书写规范要求的时限和部分内容实时监控。</li>
+                                    <li>打印从形式上可以套打、重打、续打、选页打，从内容上可以清洁打印，即不打印上级医师修改痕迹。</li>
+                                    <li>初步诊断、最后诊断采用ICD10录入。诊断序号自由定义，序号可分等级。</li>
+                                    <li>系统通过程序提供的编辑器来书写病历。</li>
+                                    <li>住院病历和病程记录中已签名的任何记录均不能删除，未签名的记录可以删除。</li>
+                                    <li>接口扩展多样化，目前已对接河北省医保系统的智能审核平台。实时上传在院病人的病历信息。</li>
+                                </ol>
+                                <p>云惠达EMR电子病历系统的主要功能模块有：</p>
+                                <ul>
+                                    <li>【住院医生工作站】：主要用于临床医生完成电子病历，其中包括住院病历、病程记录、手术记录、会诊记录、知情同意书、随访记录等。并能过与院方HIS接口，来完成医嘱和检验检查的申请查看报告工作等。
+                                        </li>
+                                    <li>【住院护士工作站】：主要用于临床护士完成护理记录、护理病程、体温单、健康教育等单据。</li>
+                                    <li>【临床科室质控工作站】：主要用于对于本科室医生书写的病历质量进行监控及评估。</li>
+                                    <li>【电子病案管理系统】:主要用于病案室对归档病历进行评分和编目等工作。</li>
+                                    <li>【病历浏览工作站】:主要用于医技科室、麻醉科室、实习医生或其它医院管理人员查阅、学习病历。</li>
+                                    <li>【病历维护工作站】:主要用于质控科或病案室等病历管理部门对相关病历进行修正。</li>
+                                    <li>【病历模板维护工作站】：主要用于增加临床科室新病历模板和模板维护修改。</li>
+                                    <li>【住院质量控制工作站】：主要用于病历质量控制科室对临床科室医生成完病历的情况的环节质控和终末质控。</li>
+                                    <li>【病案借阅工作站】：主要管理病历借阅信息。</li>
+                                    <li>【系统维护工作站】：主要用管理本系统中的用户所拥有的权限。</li>
+                                    <li>【个性化设置】，主要用于院方对本院的一个初始化数据进行个性化维护修改工作。</li>
+                                </ul>
+                                
+
+                             </div>
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow4">
+                            PACS
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow5">
+                            <h1 style="padding-left: 5%; color:white;">院内自助交互终端</h1> 
+                            <hr>
+                            <div class="zzjTestDiv">
+                                <p style="padding:20px;">云惠达院内自助交互终端系统功能完善、运行稳定并可以根据医院自需，个性定制一体机相应功能模块，现有功能模块分为：
+                                    门诊登记、门诊挂号、门诊费用查询、门诊缴费（医保）、报告单自助打印、住院费用查询、住院预存押金、医院各科室医生介绍、
+                                    收费价目表查询
+                                </p>
+                                <img src="../img/yitiji.jpg" alt="一体机终端">
+    
+                                <h3>主要功能详情信息</h3>
+                                    <ul style="list-style-type: disc;">
+                                        <li>门诊登记</li>
+                                        <p>
+                                            1、首先提示扫描身份证
+                                            2、刷身份证后弹出病人详细的基本信息窗口
+                                            3、录入手机号码
+                                            4、自助机通过小票打印机打印带病人一维码的纸质小票前往门诊就诊
+                                        </p>
+                                        <img  src="../img/mzdj.png" alt="门诊登记" >
+
+                                        <li>门诊挂号</li>
+                                        <p>1、刷身份证或者院内一卡通
+                                            2、显示病人基本信息
+                                            3、显示科室信息
+                                            4、选择科室信息
+                                            5、选择医生信息
+                                            6、选择上下午时间
+                                            7、确认挂号后打印挂号小票
+                                            </p>
+                                        <img src="../img/mzgh.png" alt="门诊挂号">
+
+                                        <li>门诊费用查询</li>
+                                        <p>1、刷身份证或者院内一卡通
+                                            2、默认查询当日未缴费记录
+                                            3、选择时间段查询历史缴费记录                                            
+                                            </p>
+                                        <img src="" alt="门诊费用查询">
+
+                                        <li>门诊缴费（医保）</li>
+                                        <p>1、刷身份证或者院内一卡通
+                                            2、选择当日所有未缴费记录
+                                            3、确认缴费（医保病人提示插入医保卡或者社保卡）
+                                            4、弹出付款码(兼容微信、支付宝)，用户扫描付款码，可设置和显示付款码等待时间，如未在规定时间内扫码支付则退回此次缴费。需重新刷卡进行缴费。
+                                            5、缴费成功打印缴费小票,
+                                            6、需要发票前往收费处补打正式发票
+                                            
+                                            </p>
+                                        <img src="../img/mzjf.png" alt="门诊缴费">
+
+                                        <li>报告单自助打印</li>
+                                        <p>1.	刷身份证或者院内一卡通
+                                            2.	默认查看当日检验报告记录(已出、未出、已打、未打报告的标识)
+                                            3.	默认选择已出、未打报告的报告单
+                                            4.	打印报告单
+                                            5.	系统保存报告单已达标识、次数。
+                                            6.	A4格式报告单则提示前往检验科窗口打印
+                                            补打报告单：
+                                            7、用户选择已出、已打报告单
+                                            8、选择补打按钮
+                                            9、输入补打管理员密码进行补打
+                                            
+                                            </p>
+                                        <img src="../img/bgdzzdy.png" alt="报告单自助打印">
+
+                                        <li>住院费用查询</li>
+                                        <p>1.	输入病人住院号、身份证号、手机号
+                                            2.	验证病人成功后系统显示该病人的费用汇总和费用明细
+                                            3、可打印费用清单
+                                                                                      
+                                            </p>
+                                        <img src="../img/zyfycx.png" alt="住院费用查询">
+
+                                        <li>住院预存押金</li>
+                                        <p>1、输入病人住院号、手机号、身份证号
+                                            2、成功验证后显示该病人基本信息、预交金记录、余额信息
+                                            3、输入要预存的金额
+                                            4、系统显示付款码，可设置和显示付款码等待时间，如未在规定时间内扫码支付则退回此次缴费。需重新验证病人信息进行缴费。
+                                            5、用户扫码付款成功打印预交金小票(用户留存)
+                                            6、显示病人余额。
+                                                              
+                                            </p>
+                                        <img src="../img/zyycyj.png" alt="住院预存押金">
+
+                                        <li>医院简介</li>
+                                        <p>1.	展示医院基本信息
+                                            2.	查看科室基本信息
+                                            3、查看医生基本信息
+                                                                                      
+                                            </p>
+                                        <img src="../img/yyjj.png" alt="医院简介">
+
+
+
+                                        <li>收费价格查询</li>
+                                        <p>通过拼音码查找收费项目，并显示收费项目的详细信息                                
+                                            </p>
+                                        <img src="../img/sfjgcx.png" alt="收费价格查询">
+
+                                        <li>自定义开发模块</li>
+                                        <p>根据医院自需，开发一体机相应的功能模块
+                                                                                      
+                                            </p>
+                                        <img src="../img/zzj.png" alt="自定义开发模块">
+
+                                    </ul>
+
+                            </div>
+                             
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow6">
+                            一卡通
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow7">
+                            体检系统
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow8">
+                            <h1 style="padding-left: 5%; color:white;">BI数据决策中心</h1> 
+                            <hr>
+                            <div class="shi-overflow-div">
+                                <p>医院运营情况一屏掌握，今日数据、本月数据、本年数据、历史数据，每隔一分钟自动刷新展示，实时监控医院运营情况
+
+                                </p>
+
+                                <ul>
+                                    <li>今日数据</li>
+                                    <p>今日数据，实时展示今日汇总信息，总收入、总人次，门诊、住院、收入、诊疗各项数据汇总按比例展示，
+                                        以及各部门收入、人次实时变动，3秒刷新；对比清晰，一目了然；
+                                        初诊、复诊、医保、自费、在院、出院、结算……凡您关心，皆可展示；</p>
+                                    <img src="../img/bi1.JPG" alt="bi今日数据图">
+
+                                    <li>本月数据</li>
+                                    <p>本月汇总数据按天实时展示，门诊、住院、收入、人次、药品、诊疗按天分析，一眼看出本月波动情况，
+                                        各部门本月每天的收入、人次情况在本页固定区域循环播放展示、一屏之内展示您最关心的数据；
+                                    </p>
+                                    <img src="../img/bi2.JPG" alt="bi本月数据图">
+
+                                    <li>本年数据</li>
+                                    <p>本年数据按月展示，汇总数据以及各项明细数据时间线上的对比增长，各部门的盈收变化以月为单位清晰展示；</p>
+                                    <img src="../img/bi3.JPG" alt="bi年数据图">
+
+                                    <li>历史数据</li>
+                                    <p>历史数据按年展示，各项您关心的数据，以年为单位，从您用我们的系统的那刻起，凡您关心，皆可展示；</p>
+                                    <img src="../img/bi4.JPG" alt="bi历史数据图">
+                                    <p>
+                                        各项您关心的数据，告诉我们，我们统计，我们定制，我们展示；给我们一屏的空间，展示您关心的所有数据；
+                                        <a href="http://140.143.98.178/" target="_blank">点击此处，查看线上展示样例（谷歌浏览器，F11进入全屏）</a>
+                                    </p>
+                                </ul>
+                            </div>
+                            
+                            
+                        </div>
+                    </transition>
+
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="divIsShow9">
+                            移动支付
+                        </div>
+                    </transition>
+                </div>
+
+                <div>
+                    <transition name="fade">
+                        <div class="div1 vue-div" v-show="caseDivIsShow1">
+                            公立医院
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="caseDivIsShow2">
+                            民营医院
+                        </div>
+                    </transition>
+                    <transition name="fade">
+                        <div class="div2 vue-div" v-show="caseDivIsShow3">
+                            典型医院
+                        </div>
+                    </transition>
+                </div>
+
+                <transition name="fade">
+                    
+                    <div class="div2 vue-div" v-show="updateMessageIsShow">
+                        更新动态
+                    </div>
+                </transition>
+
+                <div class="link-us" v-show="linkUsIsShow">
+                    <div >
+                        <h1>联系人：***</h1>
+                        <h3>联系电话：**********</h3>
+                        <h3>邮箱：*********</h3>
+                        <h3>公司地址：******</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="../js/jquery.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="../js/bootstrap.js"></script>
+<script src="../js/vue.js"></script>
+
+<script src="../js/index.js"></script>
+
+</html>
