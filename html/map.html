@@ -1,0 +1,36 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main" style="width: 900px; height: 400px; border: solid red 1px;">
+
+    </div>
+
+    <div class="a" style="border: red 2px solid; width: 200px; height: 200px;">
+
+        <div class="b" style="border: red 1px solid; width: 100px; height: 100%;margin-bottom:20px ;">
+
+        </div>
+    </div>
+</body>
+
+
+<script src="../js/echarts-en.js"></script>
+<script src="../js/china.js"></script>
+<script>
+var chart = echarts.init(document.getElementById('main'));
+chart.setOption({
+    series: [{
+        type: 'map',
+        map: 'china',
+        roam:'true'
+    }]
+});
+</script>
+</html>

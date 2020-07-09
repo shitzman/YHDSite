@@ -96,11 +96,18 @@ body{
     /* top: 20px; */
     left: 100px;
     width: 75%;
-    height: 85%;
-    line-height: 40px;
+    /* height: 85%; */
+    height: -webkit-calc(100% - 140px) ;
+    height: -moz-calc(100% - 140px) ;
+    height: calc(100% - 140px) ;
+    line-height: 35px;
     overflow-y: scroll;/*设置y轴滚动条，溢出文本竖向滚动显示*/
 
 }
+
+/* .shi-overflow-div  p{
+    font-weight: bolder;
+} */
 /* for Chrome 用伪类选择器隐藏滚动条*/
 .aboutTest3::-webkit-scrollbar,.hisTextDiv::-webkit-scrollbar ,
 .zzjTestDiv::-webkit-scrollbar,
@@ -171,13 +178,14 @@ display: none;
 }
 
 /*给二级列表默认添加左侧边框，借助展开缩放实现显示和隐藏*/
-#list1,#list2,#list3{
+/* #list1,#list2,#list3{
     border-left: red solid .12rem;
-}
+} */
 /*左侧二级菜单字体大小*/
 #list1 li,#list2 li, #list3 li{
     /* font-size: .17rem; */
     font-size: 14px;
+    padding-left: 10px;
 }
 #list1 li:hover,#list2 li:hover,#list3 li:hover{
     background-color:rgba(100, 100, 100, 1);
@@ -195,15 +203,15 @@ display: none;
 
 .zzjTestDiv img,
 .shi-overflow-div img{
-    left: 150px; 
-    position: relative; width:600px ;
+    left: 20px; 
+    position: relative; width:850px ;
     transition: all .3s;
 }
 
 .zzjTestDiv img:hover,
 .shi-overflow-div img:hover{
-    width: 700px;
-    left: 100px;
+    width: 950px;
+    left: 10px;
     transition: all .3s;
 }
 
@@ -221,8 +229,10 @@ display: none;
     border-radius: 0%;
 }
 
+/*二级菜单---选中状态---竖线效果*/
 .shi-active{
-    border-left: 0.1rem solid white;
+    border-left: 0.1rem solid red;
+    padding-left: 10px;
 }
 
 /* 顶级菜单左侧--底色--边框样式 */
@@ -232,11 +242,6 @@ display: none;
 
 .shi-left{
     border: .1rem solid red;
-}
-
-#list1{
-    border-left: red 1px solid;
-    
 }
 
 

@@ -464,7 +464,106 @@
 
                     <transition name="fade">
                         <div class="div2 vue-div" v-show="divIsShow4">
-                            PACS
+                            <h1 style="padding-left: 5%; color:white;">PACS/RIS影像系统</h1> 
+                             <hr>
+                             <div class="shi-overflow-div">
+                                <p>云惠达PACS/RIS影像系统主要涉及到内容包括：医技设备（放射科、功能科）图像传输与采集、即标准DICOM的设备
+                                    （如MR/CT/DR/CR）与非标准的模拟图像设备（如B超、肠胃镜、病理等）的转换存储，以及医技科室医生的报告生成打
+                                    印等内容。
+                                </p>
+                                <ol>
+                                    <li>
+                                        <p>整体特点</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>完全Delphi自主开发,掌握技术核心</li>
+                                            <li>支持各种接口的PACS设备</li>
+                                            <li>完全集成于HIS---使门诊/住院医生、功能放射医生、影像检查设备多方面双向共享信息</li>
+                                            <li>压缩储存、传输----读图速度快，节省投资</li>
+                                            <li>完全兼容DICOM3.0标准、HL7标准、ISO11073标准----保护医院投资以及有强可扩展性</li>
+                                            <li>图像处理功能强大、细致、完善、使用方便</li>
+                                            <li>数据库支持Oracle,MSSQL,DB2,Sybase,并分别作了优化</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>稳定的PACS/RIS服务器</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>支持CT、MRI、NM、CR、DR、CR、DX、XA、US、OT、SC、VR、HD、X线胃肠、彩超，B超、内窥镜、显微镜图像等所有医学图像及波形类别数据  </li>
+                                            <li>图像可储存于多个卷（RAID盘柜，硬盘，光盘，光盘塔），按优化的方式读取，可无限制地扩展图像的储存 </li>
+                                            <li>将图像索引储存在数据库,图像以DCM压缩格式保存在优化的多级树目录下的文件形式(类别/年/月/日/ StudyUID/SeriesUID/InstanceUID,以便快速存取,迁移,备份)。
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>多种图像采集接口</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>DICOM标准的接口</li>
+                                            <li>ISO11073医疗仪器接口</li>
+                                            <li>非数字/网络接口</li>
+                                            <li>图像采集</li>
+                                            <li>B超</li>
+                                            <li>内窥镜</li>
+                                            <li>老CT</li>
+                                            <li>X光胃肠机</li>
+                                            <li>阴道镜</li>
+                                            <li>腔镜</li>
+                                            <li>支纤镜</li>
+                                            <li>图像扫描</li>
+                                            <li>图像文件转换</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>完全集成于HIS-与医院信息一体化</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>使门诊/住院医生、功能放射医生、影像检查设备双向共享信息。</li>
+                                            <li>临床医生开的申请单通过MWL/PPS直接传输到影像检查设备的电脑，减少数据录入，减少出错，提高效率。</li>
+                                            <li>检查图像及报告经功能科和放射科医生审核后,直接到门诊/住院医生的工作站桌面,有利于全面诊断</li>
+                                            <li>病人的其他医疗信息(LIS,病历,医嘱等)显示在功能科和放射科医生的桌面,有利于全面诊断。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>图像无损压缩-储存传输</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>图像无损压缩(类似ZIP) ---压缩为原图大小的1/3。</li>
+                                            <li>储存更省---节省空间、电力、维护费用和投资。</li>
+                                            <li>传输更小---充分使用医院网络的带宽。</li>
+                                            <li>速度更快---打开图像更快速。</li>
+                                            <li>优化的快速压缩/解压缩算法。</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>得心应手的图像处理操作</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>多种W/L调节方式：</li>
+                                            <li>鼠标拖拉慢调</li>
+                                            <li>鼠标拖拉快调</li>
+                                            <li>ROI自动调节</li>
+                                            <li>选择预定义W/L调节</li>
+                                            <li>选择预定义或图像内部LUT调节</li>
+                                            <li>直方图调节</li>
+                                            <li>直接输入值调节</li>
+                                            <li>多滚动条拖拉调节</li>
+                                            <li>多种图像缩放方式：</li>
+                                            <li>鼠标中间滚轮缩放</li>
+                                            <li>鼠标拖拉缩放</li>
+                                            <li>选择放大</li>
+                                            <li>键盘+/-（或大于号/小于号）缩放</li>
+                                            <li>可调放大倍数的放大镜</li>
+                                            <li>缩放采用专用插值算法,无码格现象</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p>3D后处理功能</p>
+                                        <ul style="list-style-type:disc;">
+                                            <li>MPR (Multiplanar Reconstruction)</li>
+                                            <li>Curved-MPR 多平面重建</li>
+                                            <li>MIP (Maximum Intensity Projection) </li>
+                                            <li>Volume Rendering 容积重建</li>
+                                            <li>Surface Rendering 表面重建</li>
+                                            <li>输出 3D图像为 AVI,MPG, TIFF, JPEG </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </transition>
 
@@ -472,15 +571,19 @@
                         <div class="div2 vue-div" v-show="divIsShow5">
                             <h1 style="padding-left: 5%; color:white;">院内自助交互终端</h1> 
                             <hr>
-                            <div class="zzjTestDiv">
+                            <div class="shi-overflow-div">
                                 <p style="padding:20px;">云惠达院内自助交互终端系统功能完善、运行稳定并可以根据医院自需，个性定制一体机相应功能模块，现有功能模块分为：
                                     门诊登记、门诊挂号、门诊费用查询、门诊缴费（医保）、报告单自助打印、住院费用查询、住院预存押金、医院各科室医生介绍、
                                     收费价目表查询
                                 </p>
-                                <img src="../img/yitiji.jpg" alt="一体机终端">
+                                <ul>
+                                    <img src="../img/zzj.png" alt="一体机终端" >
+                                </ul>
+                               
     
                                 <h3>主要功能详情信息</h3>
                                     <ul style="list-style-type: disc;">
+                                        
                                         <li>门诊登记</li>
                                         <p>
                                             1、首先提示扫描身份证
@@ -532,7 +635,7 @@
                                             9、输入补打管理员密码进行补打
                                             
                                             </p>
-                                        <img src="../img/bgdzzdy.png" alt="报告单自助打印">
+                                        <img src="../img/bgdzzdy.png" alt="报告单自助打印" style="width: 400px;">
 
                                         <li>住院费用查询</li>
                                         <p>1.	输入病人住院号、身份证号、手机号

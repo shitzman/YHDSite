@@ -173,9 +173,29 @@ $("ul#shi-j").on("click","li",function(){
 
 
 
-
-// $("ul#list2 ").on("click","li",function(){      
+// $("#shi-j>li>ul ").on("click","li",function(){      
     
 //     $(this).addClass("shi-active").siblings().removeClass("shi-active");
 // });
+
+$("ul#list2 ").on("click","li",function(){      
+    
+    $(this).addClass("shi-active").siblings().removeClass("shi-active");
+    $("#list1>li").removeClass("shi-active");
+    $("#list3>li").removeClass("shi-active");
+});
+
+$("ul#list1 ").on("click","li",function(){      
+    
+    $(this).addClass("shi-active").siblings().removeClass("shi-active");
+    $("#list2>li").removeClass("shi-active");
+    $("#list3>li").removeClass("shi-active");
+});
+
+$("ul#list3 ").on("click","li",function(){      
+    
+    $(this).addClass("shi-active").siblings().removeClass("shi-active");
+    $("#list1>li").removeClass("shi-active");
+    $("#list2>li").removeClass("shi-active");
+});
 
