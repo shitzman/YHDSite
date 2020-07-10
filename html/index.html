@@ -77,16 +77,14 @@
                     <!-- 客户案例--侧边栏选项 -->
                     <li role="presentation">
                         <!-- 选项控制data-target对应的显隐 -->
-                        <a href="#" data-toggle="collapse" data-target="#list3" @click="changeListIcon3">客户案例 <span
-                                class="glyphicon "
-                                v-bind:class=" listIcon3 ? 'glyphicon-triangle-right' : 'glyphicon-triangle-bottom' "></span></a>
+                        <a href="#"  @click="caseDiv">客户案例</a>
                         <!-- 隐藏的详细菜单 -->
-                        <ul id="list3" class="collapse">
+                        <!-- <ul id="list3" class="collapse">
 
                             <li @click="changeCaseDivIsShow1" style="line-height: 40px;"><a href="#">公立医院</a></li>
                             <li @click="changeCaseDivIsShow2" style="line-height: 40px;"><a href="#">民营医院</a></li>
                             <li @click="changeCaseDivIsShow3" style="line-height: 40px;"><a href="#">典型医院</a></li>
-                        </ul>
+                        </ul> -->
                     </li>
 
                     <li @click="updateMessage"><a href="#">更新动态</a></li>
@@ -135,7 +133,7 @@
                             <div class="aboutTimeline"> <span>2014</span> 年新版HIS、LIS、MER一体化产品上线运行，将医疗信息化正式定义为产品化经营</div>
                             <div class="aboutTimeline"> <span>2015</span> 年全部客户免费更新到完全统一的版本</div>
                             <div class="aboutTimeline"> <span>2016</span> 年注册北京云惠达科技有限公司</div>
-                            <div class="aboutTimeline"> <span>2017</span> 年客户增加至40家，租赁中心服务器，同时上线统一自动升级、更新功能</div>
+                            <div class="aboutTimeline"> <span>2017</span> 年客户增加至30多家，租赁中心服务器，同时上线统一自动升级、更新功能</div>
                             <div class="aboutTimeline"> <span>2018</span> 年至今所有客户( 分布于：辽宁、秦皇岛、衡水、廊坊、石家庄、邢台、邯郸、新乡、南阳、运城、江西 共46家不同类型，其中包括眼科、血液病、
                                 皮肤病、中医、蒙医、传染病、糖尿病、骨科、综合等，不同运营模式的医疗机构如公立、私人、公私结合)的数据库更新400余次，医疗信息化系统更新700余次，系统至今运行稳定;
                                 同时与中国平安医疗云平台、北京天智(BI分析)建立合作关系，成功实现平台化运营模式，后续将开放开发平台，让更多的医疗软件开发人员开发出最适合医疗信息化的模块产品，
@@ -202,12 +200,12 @@
                                 <p>
                                     云惠达HIS系统，历经2009年研发成功，到2014年的新版HIS、LIS、MER一体化产品上线运行
                                     将医疗信息化正式定义为产品化运营，再到2015年全部客户免费更新到完全统一的版本，不断砥砺前行，
-                                    在做到了数据本地化安全的同时，又做到了功能的及时更新与补充。2017年在40多家医院同时上线自动升级、
+                                    在做到了数据本地化安全的同时，又做到了功能的及时更新与补充。2017年在30多家医院同时上线自动升级、
                                     自动更新功能。至此，对于不同医院的统一与不统一的功能要求与维护都能够做到精准定位、及时反馈、及时处理、及时解决、
                                     及时更新、及时应用；
                                 </p>
 
-                                <img src="../img/emr.png" alt="EMR配图">
+                                
                                 <h3>&bull; 各模块详情信息</h3>
                                 <ol>
                                     <li>系统维护：</li>
@@ -250,7 +248,8 @@
                                     <li>医技管理</li>
                                     <p>各个医技科室进行医技操作的执行确认</p>
                                     <li>OA平台</li>
-                                    <p>医院内部沟通、通知、申请管理系统</p>
+                                    <p>1、医院内部沟通、通知
+                                        2、文件发送批阅</p>
                                     <li>农合接口</li>
                                     <p>与农村合作医疗的数据传输接口</p>
                                     <li>医保接口</li>
@@ -262,7 +261,20 @@
                                     <li>PACS系统</li>
                                     <p>医学影像管理系统</p>
                                     <li>居民健康管理</li>
-                                    <p>居民健康卡及居民健康档案</p>
+                                    <p>对社区及养老院的健康档案及定期检查表进行记录，妇科对孕产妇及儿童的保健手册管理</p>
+                                    <li>退费审批系统</li>
+                                    <p>管理退费时的审批工作，时刻掌握医疗机构的关键部分。</p>
+                                    <li>疫情上报系统</li>
+                                    <p>1、门诊、住院医生录入传染病防治卡信息。
+                                        2、可审批传染病预防卡。
+                                        3、退回传染病预防卡记录。</p>
+                                    <li>ICU管理系统</li>
+                                    <p>1、支持ICU重症监护病人病例、医嘱、费用查看
+                                        2、支持ICU重症监护病人快速计费
+                                        3、ICU统计分析</p>
+                                    <li>系统自动上传更新</li>
+                                    <p>1、支持系统更新上传功能。
+                                        2、支持恢复历史更新功能。</p>
                                 </ol>
 
                                 
@@ -425,6 +437,10 @@
                             <h1 style="padding-left: 5%; color:white;">电子病历系统（MER）</h1> 
                              <hr>
                              <div class="shi-overflow-div">
+                                 <p>电子病历是随着医院计算机管理网络化，是医院病历现代化管理的必然趋势，其在临床的初步应用，极大地提高了医院的工作效率和医疗质量，
+                                     但这还仅仅是电子病历应用的起步。取代手写纸张病历。电子病历具有主动性、
+                                     完整和正确、知识关联、及时获取等特征，是医疗机构对门诊、住院患者（或保健对象）临床诊疗和指导干预的、数字化医疗服务工作记录。</p>
+                                <img src="../img/emr.png" alt="EMR配图">
                                 <p>云惠达EMR电子病历系统的主要特点有：</p>
                                 <ol>
                                     <li>病历内容框架采取标准化、结构化。书写时只能选择系统提供的项目，不能自定义。</li>
@@ -569,13 +585,14 @@
 
                     <transition name="fade">
                         <div class="div2 vue-div" v-show="divIsShow5">
-                            <h1 style="padding-left: 5%; color:white;">院内自助交互终端</h1> 
+                            <h1 style="padding-left: 5%; color:white;">院内自助交互终端一体机</h1> 
                             <hr>
                             <div class="shi-overflow-div">
                                 <p style="padding:20px;">云惠达院内自助交互终端系统功能完善、运行稳定并可以根据医院自需，个性定制一体机相应功能模块，现有功能模块分为：
                                     门诊登记、门诊挂号、门诊费用查询、门诊缴费（医保）、报告单自助打印、住院费用查询、住院预存押金、医院各科室医生介绍、
                                     收费价目表查询
                                 </p>
+                                <!-- 多加一个ul标签适配 -->
                                 <ul>
                                     <img src="../img/zzj.png" alt="一体机终端" >
                                 </ul>
@@ -692,7 +709,124 @@
 
                     <transition name="fade">
                         <div class="div2 vue-div" v-show="divIsShow7">
-                            体检系统
+                            
+                            <h1 style="padding-left: 5%; color:white;">体检系统</h1> 
+                            <hr>
+                            <div class="shi-overflow-div">
+                                <p>云惠达体检系统，是专为体检中心/医院体检科等体检机构，专门开发的全流程管理系统，通过软件实现检测仪器数据自动提取，内置多级医生工作台，
+                                    细化工作将体检检查结果汇总，生成体检报告登记到计算机系统中。
+                                    通过软件系统进行数据分析统计与评判以及建立体检相关的体检档案。从而实现体检流程的信息化，提高工作效率，减少手动结果录入的一些常犯错误</p>
+                                
+                                    
+                                <p>云惠达体检系统主要特点：</p>
+                                <ol>
+                                    <li>
+                                        提高工作效率，减低劳动强度 手工录入信息、定制体检表非常繁琐、重复性强，现系统将准备工作全部计算机化。
+                                        团队体检不论人数多少，只需按团体名单格式设置，即可轻松完成。上百、上千人的团体，只需几分钟，且准确无误
+                                        变以往护士开申请单字迹不清楚及写错字的现象，利用数字手段节约了定制体检单、分拣化验单等环节的成本。
+                                        通过数据接口，获取相关结果，减轻各后续站点数据录入的工作量，减轻护理人员的劳动强度，减少交叉感染的机会。
+                                        大大缩短报告生成周期，成倍提高工作效率。
+                                    </li>
+                                    <li>
+                                        提高服务质量，增加体检客户的满意度 信息系统的高效与准确性为医务人员节省了很多时间，能更好地专注于客户服务。丰富的查询功能，
+                                        能及时发现漏查、漏录现象，并通知有关人员补查、补录。杜绝多收、漏收现象。字迹清楚、整洁的各种体检资料，
+                                        漂亮美观的体检报告，详细科学的体检建议，可完整保存体检资料等优质服务都大大提高体检客户的满意度。
+                                    </li>
+                                    <li>
+                                        提高管理水平、增加信息的利用率 ，通过信息系统，院领导及科室负责人可查询体检中心所有信息，并进行实时监控，
+                                        帮助决策者改进服务，进行量化绩效管理和决策分析。医务人员通过查询，获取所需体检客户的资料，提高业务水平。
+                                        体检单位可免费拷贝单位体检结果并进行分类汇总，从而使各单位对自己员工的健康状况有一个全面的了解，有利于追踪和复查，
+                                        真正做到有效的健康管理。
+                                    </li>
+                                    <li>
+                                        体检管理系统的使用，可实现了体检中心的无纸化办公，也使健康体检管理更加系统化和规范化，大大提高了医务人员的整体素质，
+                                        增加了体检客户的满意度。
+                                    </li>
+                                </ol>
+                                <p>主要功能特点：</p>
+                                <ul>
+                                    <li>
+                                        <p>体检管理</p>
+                                        <ol>
+                                            <li>体检集中管理</li>
+                                            <li>体检快速录入</li>
+                                            <li>单项检查结果录入</li>
+                                            <li>批量结果录入</li>
+                                            <li>总检结论录入</li>
+                                            <li>批量生成总检</li>
+                                            <li>复查人员信息</li>
+                                            <li>健康档案录入</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <p>查询</p>
+                                        <ol>
+                                            <li>体检报告查询</li>
+                                            <li>综述报告查询</li>
+                                            <li>体检结果查询</li>
+                                            <li>复查人员查询</li>
+                                            <li>体检人员查询(按体检状态)</li>
+                                            <li>体检人员查询(按项目检查状态)</li>
+                                            <li>未检项目查询</li>
+                                            <li>公众自动查询</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <p>统计</p>
+                                        <ol>
+                                            <li>体检综述汇总</li>
+                                            <li>阳性结果汇总</li>
+                                            <li>体检疾患清单</li>
+                                            <li>疾病人数统计</li>
+                                            <li>疾病分布统计</li>
+                                            <li>个人体检数据分析</li>
+                                            <li>体检正常清单</li>
+                                            <li>单位体检报告</li>
+                                            <li>职业体检报告汇总</li>
+                                            <li>单位费用统计</li>
+                                            <li>医生工作量统计</li>
+                                            <li>操作员工作量统计</li>
+                                            <li>科室工作量统计</li>
+                                            <li>科室工作压力分析</li>
+                                            <li>体检人数统计</li>
+                                            <li>项目超标统计</li>
+                                            <li>查环查孕统计</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <p>检后服务</p>
+                                        <ol>
+                                            <li>短信发送体检报告</li>
+                                            <li>E-mail发送体检报告</li>
+                                            <li>网站发布体检报告</li>
+                                            <li>体检数据导出</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <p>办证</p>
+                                        <ol>
+                                            <li>健康证办理</li>
+                                            <li>健康证明办理</li>
+                                            <li>健康证查询</li>
+                                            <li>健康证明查询</li>
+                                            <li>自定义健康证</li>
+                                            <li>自定义健康证明</li>
+                                        </ol>
+                                    </li>
+                                    <li>
+                                        <p>健康评估</p>
+                                        <ol>
+                                            <li>健康评估集中录入</li>
+                                            <li>登记评估人员</li>
+                                            <li>录入调查问卷</li>
+                                            <li>查看评估结果</li>
+                                            <li>体检项目对照</li>
+                                            <li>评估文件卷管理</li>
+                                        </ol>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </transition>
 
@@ -743,24 +877,96 @@
                     </transition>
                 </div>
 
-                <div>
-                    <transition name="fade">
-                        <div class="div1 vue-div" v-show="caseDivIsShow1">
-                            公立医院
-                        </div>
-                    </transition>
-                    <transition name="fade">
-                        <div class="div2 vue-div" v-show="caseDivIsShow2">
-                            民营医院
-                        </div>
-                    </transition>
-                    <transition name="fade">
-                        <div class="div2 vue-div" v-show="caseDivIsShow3">
-                            典型医院
-                        </div>
-                    </transition>
-                </div>
+                <transition name="fade">
 
+                    
+                    <div class=" vue-div" v-show="caseDivIsShow">
+                        <h1 style="padding-left: 5%; color:white;">客户案例</h1> 
+                        <hr>
+
+                        <div class="shi-overflow-div">
+
+                      
+                            <table >
+                                <tr>
+                                    <td>河北省</td>
+                                    <td>辽宁省</td>
+                                    <td>河南省</td>
+                                    <td>山西省</td>
+                                    <td>江西省</td>
+                                    <td>其他地区</td>
+                                    
+                                </tr>
+                                <tr style="vertical-align:top">
+                                    <td >
+                                        <ul>
+                                            <li>邢台第二医院</li>
+                                            <li>安平县第二人民医院</li>
+                                            <li>石家庄优抚医院</li>
+                                            <li>沙河新建眼科医院</li>
+                                            <li>大城县城区医院</li>
+                                            <li>大城县新城区医院</li>
+                                            <li>大城县德仁堂医院</li>
+                                            <li>大城县国立中心医院</li>
+                                            <li>秦皇岛市青龙先民生医院</li>
+                                            <li>秦皇岛市柳江医院</li>
+                                            <li>邯郸蓝天骨科医院</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>朝阳糖尿病医院</li>
+                                            <li>朝阳明达医院</li>
+                                            <li>朝阳显微外科医院</li>
+                                            <li>朝阳仕成头面神经医院</li>
+                                            <li>朝阳海龙社区医院</li>
+                                            <li>建平县明达医院</li>
+                                            <li>建平县康复医院</li>
+                                            <li>建平县宏康医院</li>
+                                            <li>建平县光明医院</li>
+                                            <li>建平县骨科医院</li>
+                                            <li>建平县百草堂医院</li>
+                                            <li>喀左县第四人民医院</li>
+                                            <li>喀左县中蒙医院</li>
+                                            <li>喀左县骨科医院</li>
+                                            <li>东戴河新区御龙医院</li>
+                                            <li>盘锦糖尿病医院</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>新乡市第五人民医院</li>
+                                            <li>南阳尖峰眼科医院</li>
+                                            <li>南阳市淅川县疾病预防控制中心</li>
+                                            <li>南阳市南召县疾病预防控制中心</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>运城市第三人民医院</li>
+                                            <li>运城市第四人民医院</li>
+                                            <li>运城市逢春医院</li>
+                                            <li>运城市精神病医院</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>兴国县妇幼保健院</li>
+                                            <li>兴国县建安医院</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>日照市结核病防治所</li>
+                                            <li>通辽糖尿病医院</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                             
+                            </table>
+                        </div>
+                    </div>
+                </transition>
                 <transition name="fade">
                     
                     <div class="div2 vue-div" v-show="updateMessageIsShow">

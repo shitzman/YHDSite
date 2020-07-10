@@ -7,7 +7,7 @@ var showDiv = new Vue({
         divIsShow2: false,
         divIsShow3: false,
         divIsShow4: false,
-        divIsShow5: true,
+        divIsShow5: false,
         divIsShow6: false,
         divIsShow7: false,
         divIsShow8: false,
@@ -23,9 +23,8 @@ var showDiv = new Vue({
         aboutDivIsShow3:false,
 
 
-        caseDivIsShow1:false,
-        caseDivIsShow2:false,
-        caseDivIsShow3:false,
+        caseDivIsShow:true,
+
 
         linkUsIsShow:false,
         updateMessageIsShow:false,
@@ -50,9 +49,8 @@ var showDiv = new Vue({
           this.aboutDivIsShow3=false;
           this.linkUsIsShow=false;
           this.updateMessageIsShow=false;
-          this.caseDivIsShow1=false;
-          this.caseDivIsShow2=false;
-          this.caseDivIsShow3=false;
+          this.caseDivIsShow=false;
+          
         },
         changeIsShow1: function () {
             this.allFalse();
@@ -120,20 +118,9 @@ var showDiv = new Vue({
             // this.imgUrl = 'url(../img/bgimg1.jpg)';
         },
 
-        changeCaseDivIsShow1:function(){
+        caseDiv:function(){
             this.allFalse();
-            this.caseDivIsShow1=true;
-            
-        },
-        changeCaseDivIsShow2:function(){
-            this.allFalse();
-            this.caseDivIsShow2=true;
-            
-        },
-
-        changeCaseDivIsShow3:function(){
-            this.allFalse();
-            this.caseDivIsShow3=true;
+            this.caseDivIsShow=true;
             
         },
 

@@ -97,6 +97,7 @@ body{
     left: 100px;
     width: 75%;
     /* height: 85%; */
+    /*calc() 函数用于动态计算长度值。此处用以适应父容器的动态高度改变，并保持一个固定间距*/
     height: -webkit-calc(100% - 140px) ;
     height: -moz-calc(100% - 140px) ;
     height: calc(100% - 140px) ;
