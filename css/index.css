@@ -18,7 +18,7 @@ body{
 
 #vue-divs {
     height: 100vh;  /* 百分百适应当前浏览器高度*/
-    min-height: 920px; /* 最小高度 */
+    min-height: 900px; /* 最小高度 */
     min-width: 1650px;
 }
 
@@ -89,7 +89,7 @@ body{
 .about2-ol li{
     margin-top: 10px;
 }
-.aboutTest3 , .hisTextDiv, .zzjTestDiv,.shi-overflow-div{
+.aboutTest3 , .hisTextDiv, .zzjTestDiv,.shi-overflow-div,.shi-bzzl{
     /* font-size: 0.18rem; */
     color:black;
     position: relative;
@@ -110,7 +110,9 @@ body{
     font-weight: bolder;
 } */
 /* for Chrome 用伪类选择器隐藏滚动条*/
-.aboutTest3::-webkit-scrollbar,.hisTextDiv::-webkit-scrollbar ,
+.shi-bzzl::-webkit-scrollbar,
+.aboutTest3::-webkit-scrollbar,
+.hisTextDiv::-webkit-scrollbar ,
 .zzjTestDiv::-webkit-scrollbar,
 .shi-overflow-div::-webkit-scrollbar{
 display: none;
@@ -200,6 +202,9 @@ display: none;
 }
 
 
+.shi-bzzl img{
+    width: 380px;
+}
 
 
 .zzjTestDiv img,

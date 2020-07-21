@@ -23,11 +23,14 @@ var showDiv = new Vue({
         aboutDivIsShow3:false,
 
 
-        caseDivIsShow:true,
+        caseDivIsShow:false,
 
 
         linkUsIsShow:false,
         updateMessageIsShow:false,
+
+        fzjhIsShow:false,
+        bqzlIsShow:true,
 
 
         // imgUrl:'url(../img/bgimg6.jpg)',
@@ -50,6 +53,8 @@ var showDiv = new Vue({
           this.linkUsIsShow=false;
           this.updateMessageIsShow=false;
           this.caseDivIsShow=false;
+          this.fzjhIsShow=false;
+          this.bqzlIsShow=false;
           
         },
         changeIsShow1: function () {
@@ -147,6 +152,14 @@ var showDiv = new Vue({
         updateMessage:function(){
             this.allFalse();
             this.updateMessageIsShow=true;
+        },
+        changefzjhIsShow:function(){
+            this.allFalse();
+            this.fzjhIsShow=true;
+        },
+        changebqzlIsShow:function(){
+            this.allFalse();
+            this.bqzlIsShow=true;
         }
     }
 })
@@ -155,7 +168,6 @@ var showDiv = new Vue({
 $("ul#shi-j").on("click","li",function(){      
     
     $(this).addClass("active").siblings().removeClass("active");
-    
 });
 
 
@@ -184,5 +196,105 @@ $("ul#list3 ").on("click","li",function(){
     $(this).addClass("shi-active").siblings().removeClass("shi-active");
     $("#list1>li").removeClass("shi-active");
     $("#list2>li").removeClass("shi-active");
+});
+
+
+/* 客户案例Echarts Map配置*/ 
+
+var dataList=[ 
+    {name: '河北', value:'11'},
+    {name: '河南', value: '4'},
+    {name:'辽宁',value:'16'},
+    {name:'山西',value:'4'},
+    {name:'江西',value:'2'},
+    {name:'内蒙古',value:'1'},
+    {name:'山东',value:'1'},
+
+    {name:"南海诸岛",value:'0'},
+    {name: '北京', value: '0'},
+    {name: '天津', value: '0'},
+    {name: '上海', value: '0'},
+    {name: '重庆', value: '0'},
+    {name: '云南', value: '0'},
+    {name: '黑龙江', value: '0'},
+    {name: '湖南', value: '0'},
+    {name: '安徽', value: '0'},
+    {name: '新疆', value: '0'},
+    {name: '江苏', value: '0'},
+    {name: '浙江', value: '0'},
+    {name: '湖北', value: '0'},
+    {name: '广西', value: '0'},
+    {name: '甘肃', value: '0'},
+    {name: '陕西', value: '0'},
+    {name: '吉林', value: '0'},
+    {name: '福建', value: '0'},
+    {name: '贵州', value: '0'},
+    {name: '广东', value: '0'},
+    {name: '青海', value: '0'},
+    {name: '西藏', value: '0'},
+    {name: '四川', value: '0'},
+    {name: '宁夏', value: '0'},
+    {name: '海南', value: '0'},
+    {name: '台湾', value: '0'},
+    {name: '香港', value: '0'},
+    {name: '澳门', value: '0'}
+];
+var chart = echarts.init(document.getElementById('caseMap'));
+chart.setOption({
+tooltip: {
+            formatter:function(params,ticket, callback){
+                return params.seriesName+'<br />'+params.name+'：'+params.value
+            }//数据格式化
+        },
+    visualMap: {
+        min: 0,
+        max: 20,
+        left: 'left',
+        top: 'bottom',
+        text: ['高','低'],//取值范围的文字
+        inRange: {
+            color: ['#FAF0E6', '#006400']//取值范围的颜色
+        },
+        show:true//图注
+    },
+    geo: {
+        map: 'china',
+        roam: false,//不开启缩放和平移
+        zoom:1.23,//视角缩放比例
+        label: {
+            normal: {
+                show: true,
+                fontSize:'14',
+                color: 'rgba(0,0,0,0.7)'
+            }
+        },
+        itemStyle: {
+            normal:{
+                borderColor: 'rgba(0, 0, 0, 0.2)'
+            },
+            emphasis:{
+                areaColor: '#F3B329',//鼠标选择区域颜色
+                shadowOffsetX: 0,
+                shadowOffsetY: 0,
+                shadowBlur: 20,
+                borderWidth: 0,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    },
+    series : [
+        {
+            name: '客户数量',
+            type: 'map',
+            geoIndex: 0,
+            data:dataList
+        }
+    ]
+
+// series: [{
+//     type: 'map',
+//     map: 'china',
+//     roam:'true'
+// }]
 });
 
