@@ -1,3 +1,6 @@
+
+
+
 var showDiv = new Vue({
     el: "#vue-divs",
     data: {
@@ -168,6 +171,8 @@ var showDiv = new Vue({
 $("ul#shi-j").on("click","li",function(){      
     
     $(this).addClass("active").siblings().removeClass("active");
+    // $(this).siblings().children().siblings().children().removeClass("shi-active");
+    $(this).siblings().find("li").removeClass("shi-active");
 });
 
 
@@ -198,6 +203,8 @@ $("ul#list3 ").on("click","li",function(){
     $("#list2>li").removeClass("shi-active");
 });
 
+
+$(document).ready(function(){
 
 /* 客户案例Echarts Map配置*/ 
 
@@ -290,11 +297,7 @@ tooltip: {
             data:dataList
         }
     ]
-
-// series: [{
-//     type: 'map',
-//     map: 'china',
-//     roam:'true'
-// }]
 });
 
+
+})
